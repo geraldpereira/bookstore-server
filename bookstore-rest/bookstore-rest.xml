@@ -1,0 +1,44 @@
+<?xml version="1.0"  encoding="ISO-8859-1"?>
+<!DOCTYPE Configure PUBLIC "-//Jetty//Configure//EN" "http://www.eclipse.org/jetty/configure.dtd">
+
+<Configure class="org.eclipse.jetty.webapp.WebAppContext">
+
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<!-- Required minimal context configuration : -->
+	<!-- + contextPath -->
+	<!-- + war OR resourceBase -->
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<Set name="contextPath">/tvlike-webservices</Set>
+	<Set name="war">
+		<SystemProperty name="jetty.home" default="." />
+		/webapps/tvlike-webservices.war
+	</Set>
+	
+	<!-- Require ssl connection ! -->
+	<!-- <Set name="securityHandler">
+        <New class="org.eclipse.jetty.security.ConstraintSecurityHandler">
+            <Call name="addConstraintMapping">
+                <Arg>
+                   <New class="org.eclipse.jetty.security.ConstraintMapping">
+                       <Set name="pathSpec">/*</Set>
+                       <Set name="constraint">
+                          <New class="org.eclipse.jetty.util.security.Constraint">
+                             2 means CONFIDENTIAL. 1 means INTEGRITY
+                             <Set name="dataConstraint">2</Set>
+                          </New>
+                       </Set>
+                   </New>
+                </Arg>
+            </Call>
+        </New>
+     </Set> -->
+	
+	<!-- <Call class="java.lang.System" name="setProperty">
+		<Arg>
+			properties.credentials
+		</Arg>
+		<Arg>
+			../../conf/credentials.properties
+		</Arg>
+	</Call> -->
+</Configure>

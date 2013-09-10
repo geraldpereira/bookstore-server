@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+		"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="fr.gpereira.bookstore.mappers.BookMapper">
+
+	<insert id="createBook" parameterType="Book" useGeneratedKeys="true" keyProperty="id">
+	   <!--   <selectKey keyProperty="objectId" resultType="int" order="BEFORE">
+            SELECT nextVal('book_sequence')
+            or ->  SELECT my_sequence.nextVal from dual  
+        </selectKey> -->
+		insert
+		into book
+		(title,author,releaseDate)
+		values (#{title},#{author},#{releaseDate})
+	</insert>
+
+	<update id="updateBook" parameterType="Book">
+		update book set
+		title = #{title},
+		author = #{author},
+		releaseDate = #{releaseDate}
+		where id = #{id}
+	</update>
+	
+	<delete id="deleteBook" parameterType="map">
+		delete from book
+		where id = #{bookId}		
+	</delete>
+
+	<select id="listBooks" resultMap="bookResult">
+		select
+		*
+		from book
+	</select>
+
+	<resultMap type="Book" id="bookResult">
+		<result property="id" column="id" javaType="Integer" />
+		<result property="title" column="title" javaType="String" />
+		<result property="author" column="author" javaType="String" />
+		<result property="releaseDate" column="releaseDate" javaType="Date" />
+	</resultMap>
+
+</mapper>

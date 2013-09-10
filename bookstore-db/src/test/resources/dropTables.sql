@@ -1,0 +1,2 @@
+DROP TABLE IF EXISTS book;
+-- DROP SEQUENCE IF EXISTS book_sequence;
