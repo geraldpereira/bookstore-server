@@ -24,6 +24,13 @@ public class BookStoreDAOModule extends MyBatisModule {
 	private final String username;
 	private final String password;
 	
+	/**
+	 * Constructor
+	 * @param driver the db driver
+	 * @param url the db url
+	 * @param username the db username
+	 * @param password the db pwd
+	 */
 	public BookStoreDAOModule(String driver, String url, String username,
 			String password) {
 		super();

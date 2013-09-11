@@ -13,6 +13,12 @@ import com.byob.rest.exception.RestExceptionMapper;
 import com.sun.jersey.guice.JerseyServletModule;
 import com.sun.jersey.guice.spi.container.servlet.GuiceContainer;
 
+/**
+ * Guice Module used to configure Jersey (REST WS) servlet configuration 
+ * 
+ * @author gpereira
+ *
+ */
 public class RESTJerseyServletModule extends JerseyServletModule {
 
 	@Override

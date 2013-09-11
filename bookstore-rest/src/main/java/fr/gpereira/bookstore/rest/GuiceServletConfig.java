@@ -15,6 +15,15 @@ import com.google.inject.servlet.GuiceServletContextListener;
 import fr.gpereira.bookstore.dao.BookStoreDAOModule;
 
 
+/**
+ * 
+ * Guice injector factory (entry point in the web.xml file)
+ * 
+ * Creates the injector that wires the application
+ * 
+ * @author gpereira
+ *
+ */
 public class GuiceServletConfig extends GuiceServletContextListener {
 
 	private static final String PROPERTIES_FILE_DEFAULT_VALUE = "inject.properties";
