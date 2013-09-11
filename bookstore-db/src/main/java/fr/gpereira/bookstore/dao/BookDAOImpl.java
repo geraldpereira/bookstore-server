@@ -65,14 +65,15 @@ class BookDAOImpl implements BookDAO {
 	@Override
 	@Transactional
 	public void delete(Integer bookId) throws DAOException {
-		Preconditions.checkNotNull(bookId);
 		try{
+			Preconditions.checkNotNull(bookId);
 			mapper.deleteBook(bookId);
-		}catch(PersistenceException e){
+		}catch(PersistenceException | NullPointerException e){
 			throw new DAOException("Failed to delete book.",e);
 		}
 	}
 
+	@Override
 	public List<Book> list() throws DAOException {
 		try{
 			return mapper.listBooks();
@@ -80,10 +81,5 @@ class BookDAOImpl implements BookDAO {
 			throw new DAOException("Failed to list campaigns.",e);
 		}
 	}
-	
-	
-	
-
-	
 
 }

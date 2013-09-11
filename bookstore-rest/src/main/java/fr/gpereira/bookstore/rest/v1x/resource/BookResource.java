@@ -111,7 +111,7 @@ public class BookResource {
 	 */
 	@GET
 	@Produces({ MediaType.APPLICATION_JSON })
-	@Path("/")
+	@Path("/list")
 	public Book[] list() {
 		log.info("List books");
 		try {

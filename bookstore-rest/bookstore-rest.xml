@@ -8,10 +8,10 @@
 	<!-- + contextPath -->
 	<!-- + war OR resourceBase -->
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-	<Set name="contextPath">/tvlike-webservices</Set>
+	<Set name="contextPath">/bookstore-rest</Set>
 	<Set name="war">
 		<SystemProperty name="jetty.home" default="." />
-		/webapps/tvlike-webservices.war
+		/webapps/bookstore-rest.war
 	</Set>
 	
 	<!-- Require ssl connection ! -->
