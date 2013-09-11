@@ -73,7 +73,7 @@
 
 	<modules>
 		<module>bookstore-db</module>
-		<!-- <module>bookstore-rest</module> -->
+		<module>bookstore-rest</module>
 	</modules>
 	
 		<build>
