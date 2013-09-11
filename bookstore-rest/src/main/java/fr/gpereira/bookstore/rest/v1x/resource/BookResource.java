@@ -112,7 +112,7 @@ public class BookResource {
 	@GET
 	@Produces({ MediaType.APPLICATION_JSON })
 	@Path("/")
-	public Book[] list() throws WSException {
+	public Book[] list() {
 		log.info("List books");
 		try {
 			return dao.list().toArray(new Book[] {});

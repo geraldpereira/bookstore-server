@@ -48,7 +48,7 @@ public class BookDAOImplIntegrationTest {
 		book.setAuthor("author");
 		book.setReleaseDate(new Date());
 		dao.create(book);
-		assertEquals(Integer.valueOf(1), book.getId());
+		assertNotNull(book.getId());
 	}
 
 	@Test(expected = DAOException.class)
@@ -120,6 +120,6 @@ public class BookDAOImplIntegrationTest {
 	public void list() throws DAOException {
 		List<Book> books = dao.list();
 		System.out.println(books);
-		assertEquals(1, books.size());
+		assertFalse(books.isEmpty());
 	}
 }
